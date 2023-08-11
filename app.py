@@ -22,7 +22,7 @@ def index():
     return render_template("index.html", result=result)
 
 
-# new comment
+# new comment updates
 
 def generate_prompt(animal):
     return """Suggest three names for an animal that is a superhero.
