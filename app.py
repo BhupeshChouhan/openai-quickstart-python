@@ -22,6 +22,8 @@ def index():
     return render_template("index.html", result=result)
 
 
+# new comment
+
 def generate_prompt(animal):
     return """Suggest three names for an animal that is a superhero.
 
