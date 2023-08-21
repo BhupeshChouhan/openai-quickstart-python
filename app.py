@@ -1,5 +1,4 @@
 import os
-
 import openai
 from flask import Flask, redirect, render_template, request, url_for
 
@@ -22,6 +21,8 @@ def index():
     return render_template("index.html", result=result)
 
 
+# new comment updates
+
 def generate_prompt(animal):
     return """Suggest three names for an animal that is a superhero.
 
@@ -33,3 +34,4 @@ Animal: {}
 Names:""".format(
         animal.capitalize()
     )
+
