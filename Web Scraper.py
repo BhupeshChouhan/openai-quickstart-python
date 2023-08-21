@@ -50,4 +50,6 @@ def search_and_extract_links(query):
 search_query = input("Enter the search query: ")
 output = search_and_extract_links(search_query)
 
+#new change
+
 print(output)
