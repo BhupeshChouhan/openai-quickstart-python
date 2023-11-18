@@ -11,7 +11,7 @@ def search_and_extract_links(query):
     driver = webdriver.Chrome(options=chrome_options)
 
     # Navigate to the webpage
-    url = f"https://duckduckgo.com/?q={query}&ia=web"  # Replace with the URL you want to scrape
+    url = f"https://duckduckgo.com/?q={query}+site%3Awww.youtube.com&ia=web"  # Replace with the URL you want to scrape
     driver.get(url)
 
     # Retrieve the entire webpage source
@@ -32,7 +32,7 @@ def search_and_extract_links(query):
 
         for link in target_section.find_all("a", href=True):
             href = link["href"]
-            if href.startswith("https"):
+            if href.startswith("https://www.youtube.com"):
                 span = link.find_next("span")
                 text = span.get_text() if span else "No associated text"
                 link_data.append({"link": href, "text": text})

@@ -5,16 +5,16 @@ import json
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 response = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo",
+    model="gpt-3.5-turbo-16k",
     messages=[
         {
             "role": "system",
             "content": """
                         You are Marv, a backend engine for a mobile game.
                         There are a million users on this app.
-                        Your job is to provide a General Knowledge Question and 4 answers to choose from.
+                        Your job is to provide a Trivia Puzzle Question and 4 answers to choose from.
                         The questions should be based on history, science, technology, engineering, and mathematics.
-                        The questions should be for people who are 54 years old and older.
+                        The questions should be for people who are 18 to 100 years old.
                         The question should be within 20 words. 
                         You should not send the same question that you sent in last million requests.
                         You should also provide the answer.
